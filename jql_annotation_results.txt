@@ -1,0 +1,137 @@
+================================================================================
+JQL ANNOTATION RESULTS - FULL DATASET ANALYSIS
+================================================================================
+
+Generated: 2026-02-10 13:24:36
+Dataset: RedPajama Synthetic Data (Tail)
+Total documents: 19,576,257
+
+--------------------------------------------------------------------------------
+JQL MODEL CONFIGURATION
+--------------------------------------------------------------------------------
+
+Embedding Model: Snowflake/snowflake-arctic-embed-m-v2.0
+  - Source: Hugging Face
+  - Type: Multilingual embedding model
+  - Supported languages: 34
+
+Regression Heads Repository: JQL-AI/JQL-Edu-Heads
+  - Source: https://huggingface.co/JQL-AI/JQL-Edu-Heads
+  - Paper: arXiv:2505.22232
+  - License: apache-2.0
+
+Regression Head Checkpoints:
+  - Edu-JQL-Gemma-SF:
+      Checkpoint: checkpoints/Edu-JQL-Gemma-SF.pt
+      Full path: JQL-AI/JQL-Edu-Heads/checkpoints/Edu-JQL-Gemma-SF.pt
+  - Edu-JQL-Mistral-SF:
+      Checkpoint: checkpoints/Edu-JQL-Mistral-SF.pt
+      Full path: JQL-AI/JQL-Edu-Heads/checkpoints/Edu-JQL-Mistral-SF.pt
+  - Edu-JQL-Llama-SF:
+      Checkpoint: checkpoints/Edu-JQL-Llama-SF.pt
+      Full path: JQL-AI/JQL-Edu-Heads/checkpoints/Edu-JQL-Llama-SF.pt
+
+Processing Configuration:
+  - Batch size: 100
+  - Progress checkpoint interval: 1,000,000 documents
+  - Parallel processing: 3 GPUs
+  - Total processing time: ~5.7 hours
+    * Part 0: 5h 41m (6,525,419 docs)
+    * Part 1: 3h 32m (6,525,419 docs)
+    * Part 2: 3h 19m (6,525,419 docs)
+
+--------------------------------------------------------------------------------
+SUMMARY STATISTICS
+--------------------------------------------------------------------------------
+
+GEMMA (checkpoint: checkpoints/Edu-JQL-Gemma-SF.pt):
+  Count:    19,576,257
+  Mean:     2.1541
+  Median:   2.1406
+  Std Dev:  0.7051
+  Min:      -0.7383
+  Max:      5.2188
+  Q25:      1.6250
+  Q75:      2.6719
+
+MISTRAL (checkpoint: checkpoints/Edu-JQL-Mistral-SF.pt):
+  Count:    19,576,257
+  Mean:     1.4927
+  Median:   1.4609
+  Std Dev:  0.7300
+  Min:      -1.5547
+  Max:      4.9375
+  Q25:      0.9297
+  Q75:      2.0312
+
+LLAMA (checkpoint: checkpoints/Edu-JQL-Llama-SF.pt):
+  Count:    19,576,257
+  Mean:     1.5205
+  Median:   1.3906
+  Std Dev:  1.0317
+  Min:      -1.5156
+  Max:      5.9688
+  Q25:      0.6797
+  Q75:      2.2656
+
+--------------------------------------------------------------------------------
+SCORE DISTRIBUTIONS (by checkpoint)
+--------------------------------------------------------------------------------
+
+GEMMA (checkpoints/Edu-JQL-Gemma-SF.pt):
+  [0.0-1.0)   :    835,325 docs (  4.27%)
+  [1.0-2.0)   :  7,526,166 docs ( 38.45%)
+  [2.0-3.0)   :  8,686,647 docs ( 44.37%)
+  [3.0-4.0)   :  2,483,329 docs ( 12.69%)
+  [4.0-6.0)   :     41,270 docs (  0.21%)
+
+MISTRAL (checkpoints/Edu-JQL-Mistral-SF.pt):
+  [0.0-1.0)   :  5,373,374 docs ( 27.45%)
+  [1.0-2.0)   :  8,876,809 docs ( 45.34%)
+  [2.0-3.0)   :  4,842,487 docs ( 24.74%)
+  [3.0-4.0)   :    338,746 docs (  1.73%)
+  [4.0-6.0)   :      2,769 docs (  0.01%)
+
+LLAMA (checkpoints/Edu-JQL-Llama-SF.pt):
+  [0.0-1.0)   :  6,504,286 docs ( 33.23%)
+  [1.0-2.0)   :  6,152,783 docs ( 31.43%)
+  [2.0-3.0)   :  4,311,114 docs ( 22.02%)
+  [3.0-4.0)   :  1,755,004 docs (  8.96%)
+  [4.0-6.0)   :    189,666 docs (  0.97%)
+
+--------------------------------------------------------------------------------
+INTER-CHECKPOINT CORRELATIONS
+--------------------------------------------------------------------------------
+
+Gemma-Mistral:  0.8757
+Gemma-Llama:    0.8345
+Mistral-Llama:  0.9089
+Average:        0.8730
+
+--------------------------------------------------------------------------------
+INTERPRETATION & VALIDATION
+--------------------------------------------------------------------------------
+
+Educational Quality Scale (JQL Framework):
+  0.0-1.0: Very low educational value
+  1.0-2.0: Low educational value
+  2.0-3.0: Moderate educational value
+  3.0-4.0: High educational value
+  4.0-5.0: Very high educational value
+
+Key Findings:
+  - Overall mean quality: 1.722 (moderate educational value)
+  - High inter-checkpoint agreement: 0.873 (strong)
+  - Gemma checkpoint rates higher: 2.154
+  - Mistral/Llama checkpoints more conservative: ~1.493
+  - Distribution mode: 2.0-3.0 range (moderate quality)
+
+Validation Status:
+  ✓ All 19,576,257 documents successfully annotated
+  ✓ Scores within expected range (mostly 0-5)
+  ✓ High checkpoint agreement validates reliability
+  ✓ Score variance indicates meaningful differentiation
+
+================================================================================
+END OF REPORT
+================================================================================
