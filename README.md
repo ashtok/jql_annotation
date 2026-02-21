@@ -10,7 +10,7 @@ This repository contains the setup for the JQL (Judging Quality across Languages
 
 ## Usage
 
-Run the annotation pipeline:
+### Run the annotation pipeline:
 ```bash
 python annotate_sample.py
 Original Repository
